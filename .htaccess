@@ -1,0 +1,4 @@
+AuthUserFile /home/JBuffenb/etc/passwd.htaccess
+AuthType Basic
+AuthName "Private"
+require user buff tuna
