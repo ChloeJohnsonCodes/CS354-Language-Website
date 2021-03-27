@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <title>Arithmetic: C++</title>
+  <body>
+    <h1>Arithmetic in C++</h1>
+    <h3>Author: Chloe Johnson</h3>
+    <p> This is a basic function that uses the modulo operator to determine
+      if a number is prime in C++. It takes one parameter, number. Then it
+      it loops through every possible value that number could be divided by.
+      If zero is returned from the operation on number and i, the number isn't
+      prime. Otherwise, it's a prime number.
+    </p>
+    <p>
+      <pre>
+        <code>
+          bool isPrime(int number) {
+              for(int i = 2; i < number; i++) {
+                  if ((number%i) == 0) {
+                      return false;
+                  }
+              }
+              return true;
+          }
+        </code>
+        <samp>
+          Output:
+
+          Enter a number to check if it's prime: 12
+          12 is not a prime number.
+
+          Enter a number to check if it's prime: 23
+          23 is a prime number.
+        </samp>
+      </pre>
+    </p>
+    <a href="arithmetic.cpp" download>Download program</a>
+  </body>
+</html>
