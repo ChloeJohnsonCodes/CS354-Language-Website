@@ -122,7 +122,7 @@ int main() {
     }
 
     // string comparisons in C++ compares the value of the string object to the sequence of characters specified by its args
-    if(major.compare("Computer Science")){
+    if(major.compare("Computer Science") == 0){
         cout << "That is a great major! " << endl;
     }
     cout << "What are three hobbies you enjoy?" << endl;
