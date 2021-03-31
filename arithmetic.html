@@ -4,6 +4,9 @@
   <body>
     <h1>Arithmetic in C++</h1>
     <h3>Author: Chloe Johnson</h3>
+    <p> There are many ways that C++ utilizes simple operators to perform arithmetic. In the first example program, Prime Checker, C++ uses the modulo operator to return a number. C++ also has a math library that allows it to perform operations such as pow() and round(). In the second example program, Quadratic Solver, pow() is used to raise a variable, b, to the power of two.
+    </p>
+    <h3>Prime Checker</h3>
     <p> This is a basic function that uses the modulo operator to determine
       if a number is prime in C++. It takes one parameter, number. Then it
       it loops through every possible value that number could be divided by.
@@ -14,7 +17,13 @@
       <pre>
         <code>
           bool isPrime(int number) {
+          
+              // For loop iterating through all possible numbers number could be
+              // divided by
               for(int i = 2; i < number; i++) {
+                  
+                  // The modulo operator is used to determine if remainders
+                  // exist after dividing number by i. If so, false is returned.
                   if ((number%i) == 0) {
                       return false;
                   }
@@ -33,6 +42,68 @@
         </samp>
       </pre>
     </p>
-    <a href="arithmetic.cpp" download>Download program</a>
+    <a href="arithmetic.cpp" download>Download Prime Checker</a>
+    <h3>Quadratic Solver</h3>
+    <p> This function takes 3 coefficients from second-degree polynomials as input and determines what the roots are. Essentially, x can be determined in equations such as x^2 - 9x + 18 = 0.
+    </p>
+    <p>
+      <pre>
+        <code>
+            // This is a variable for storing strings.
+            std::string retStrings[3];
+
+            // The quadratic method uses the quadratic formula to calculate the roots of
+            // a second-order polynomial equation.
+            void quadratic(int a, int b, int c) {
+
+                // The discriminant is the part underneath the square root.
+                double discriminant = pow(b, 2) - (4 * a * c);
+
+                // If the discriminant is greater than 0, two roots will be returned.
+                if (discriminant > 0) {
+                    retStrings[0] = std::to_string((-b + sqrt(discriminant))/double(2 * a));
+                    retStrings[1] = std::to_string((-b - sqrt(discriminant))/double(2 * a));
+                }
+
+                // If the discriminant is 0, one root will be returned.
+                else if (discriminant == 0) {
+                    retStrings[0] = std::to_string(-b/double(2 * a));
+                }
+
+                // If the discriminant is less than 0, two complex roots will be returned.
+                else {
+                    std::string firstArg = std::to_string(-b/double(2 * a));
+                    std::string secondArg = std::to_string(sqrt(-discriminant)/double(2 * a));
+                    retStrings[0] = firstArg + " + " + secondArg + "i";
+                    retStrings[1] = firstArg + " - " + secondArg + "i";
+                }
+            }
+        </code>
+        <samp>
+            Output:
+            
+            Enter numbers a, b, and c into the quadratic formula.
+            a:35
+            b:22
+            c:3
+            Root 1: -0.200000
+            Root 2: -0.428571
+            
+            Enter numbers a, b, and c into the quadratic formula.
+            a:21
+            b:33
+            c:42
+            Root 1: -0.785714 + 1.175863i
+            Root 2: -0.785714 - 1.175863i
+            
+            Enter numbers a, b, and c into the quadratic formula.
+            a:1
+            b:2
+            c:1
+            Root 1: -1.000000
+        </samp>
+      </pre>
+    </p>
+    <a href="arithmeticpt2.cpp" download>Download Quadratic Solver</a>
   </body>
 </html>
