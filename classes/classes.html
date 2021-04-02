@@ -4,34 +4,104 @@
   <body>
     <h1>Classes in C++</h1>
     <h3>Author: Hannah Jacobson</h3>
-    <p>***Brief explanation on classes***</p>
+    <p>C++ implements the creation of classes alongside the majority of C's features. These classes allow C++ to incorperate 
+      encapsulation, polymorphism, and inheritance.. Methods and public variables from a class are accessed with dot syntax 
+      (i.e. square.foo()) and the content of a class can be hidden from the user by used one of the three access specifiers: 
+      public, private, or protected. Subclasses can inherit methods and attributes from one or more parent classes, 
+      differentiating it from other object-oriented languages like Java.</p>
     <h3>Wallet Header</h3>
-    <p>***Brief explanation on wallet header***</p>
+    <p>The Wallet header file is where I've declared the Wallet class. The class has one private variable for each wallet's 
+      balance. To see or change the balance, a programmer will have to use the public methods getBalance, setBalance, or withdraw.</p>
     <p>
       <pre>
         <code>
-            *Some code snippet*
+            	class Wallet {
+		private:                        //This is an access specifier
+			int balance;                //Everything listed after it is private
+        
+		public:                         //Now, everything listed after "public:" is public!
+			Wallet();                   //Wallet declaration
+        
+			int getBalance();           //Return the current value held in balance
+    
+			void setBalance(int val);   //Set the balance to be an integer value
+    
+			void withdraw(int val);     //Remove an integer value from the balance
+	};
         </code>
       </pre>
     </p>
     <a href="Wallet.h" download>Download Wallet Header</a>
     <h3>Wallet Class</h3>
-    <p>***Brief explanation on wallet class***</p>
+    <p>After a class has been declared - whether in it's own file or simply outside a main function - the 
+      class methods can be defined inside the class or elsewhere. In order to define a method outside the class, 
+      you need to use the scope resolution modifier "::" with the method's name to associate it with its class.</p>
+    <p>The Wallet class file uses this method to define each method from the Wallet header file.</p>
     <p>
       <pre>
         <code>
-            *Some code snippet*
+            	#include "Wallet.h"                 //Remember to include the header file!
+        
+	Wallet::Wallet(){
+		balance = 0;                    //Initialize our class variables
+	}        
+
+	/* We access balance with these methods for 
+ 	  encapsulation!
+ 	  */
+	int Wallet::getBalance(){
+		return balance;                 
+	}
+
+	void Wallet::setBalance(int val){
+		balance = val;
+	}
+    
+	void Wallet::withdraw(int val){
+		balance -= val;
+	}
         </code>
       </pre>
     </p>
     <a href="Wallet.cpp" download>Download Wallet Class</a>
     <h3>Main Class</h3>
-    <p>***Brief explanation on main class***</p>
+    <p>The main class creates two Wallets: myWallet and yourWallet. Each wallet begins with one hundred 
+      dollars in its balance, and myWallet has twenty-seven dollars withdrawn. This process is narrated 
+      by the program in the standard output.</p>
     <p>
       <pre>
         <code>
-            *Some code snippet*
+            	#include 
+	#include "Wallet.h"	//Include the header file once again!
+
+	int main() {
+		int startingBal = 100;
+    
+		//Creating two wallet objects with two distinct balances
+		Wallet myWallet;
+		Wallet yourWallet;
+    
+		myWallet.setBalance(startingBal);
+		yourWallet.setBalance(startingBal);
+    
+		std::cout&lt;&lt;"I have " &lt;&lt; myWallet.getBalance() &lt;&lt; " dollars in my wallet!\n";
+		std::cout&lt;&lt;"You also have " &lt;&lt; yourWallet.getBalance() &lt;&lt; " dollars.\n";
+    
+		//Only myWallet's balance will be affected
+		myWallet.withdraw(27);
+    
+		int loseVal = startingBal - myWallet.getBalance();
+    
+		std::cout&lt;&lt;"I lost " &lt;&lt; loseVal  &lt;&lt; " dollars...\n";
+		std::cout&lt;&lt;"Now I have " &lt;&lt; myWallet.getBalance() &lt;&lt; " dollars and you have " &lt;&lt; yourWallet.getBalance() &lt;&lt; " dollars.\n";
+		std::cout&lt;&lt;"Lucky you!\n";
+
+		return 0;
+	}
         </code>
+        <samp> Output: I have 100 dollars in my wallet! You also have 100 dollars. <br />
+        I lost 27 dollars... Now I have 73 dollars and you have 100 dollars. Lucky you! 
+        </samp>
       </pre>
     </p>
     <a href="main.cpp" download>Download Main Class</a>
