@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <title>C++ Compilers</title>
+    <body>
+        <h1>C++ Compilers</h1>
+        <h3>Author: Chloe Johnson</h3>
+        <p>The most mature and compatible C++ compiler is on GCC. It's referred to as the GNU Compiler Collection. Many IDEs (Integrated Development Environments) will include a compiler, but some won't. Users should be aware of this before relying on an IDE to compile their programs.<p>
+        <h3>Windows</h3>
+        <p>There are two ways that users can install the GCC compiler on their Windows system.</p>
+        <p>Cygwin:</p>
+        <ol>
+            <li>Follow the directions to install the software at http://www.cygwin.com</li>
+            <li>During the installation, users will be prompted to select packages. They should select the "gcc-c++" package.</li>
+            <li>Once Cygwin is done installing, users can click on the icon to reveal the Cygwin command prompt.</li>
+            <li>Cygwin creates an environment that is similar to a Linux/Unix machine, so users can compile sample programs according to the run and compile instructions.</li>
+        </ol>
+        <p>MinGW + DevCpp:</p>
+        <ol>
+            <li>Go to http://www.bloodshed.net/devcpp.html and download a version of Dev-C++ that includes Mingw/GCC.</li>
+            <li>Start a C++ project with the compiler.</li>
+        </ol>
+        <h3>Mac OS X</h3>
+        <p>There is an IDE specifically for Mac operating systems called Xcode. Xcode uses a compiler known as clang instead of the GCC compiler. Clang can be used to compile C++ programs, or the GCC compiler can be invoked from the Mac Terminal.</p>
+        <h3>Linux</h3>
+        <p>The GCC C++ installation instructions vary for each Linux distribution.<p>
+        <ul>
+            <li>For Gentoo, GCC C++ is part of the system core (since everything in Gentoo is compiled)</li>
+            <li>For Redhat, get a gcc-c++ RPM, e.g. using Rpmfind and then install (as root) using rpm -ivh gcc-c++-version-release.arch.rpm</li>
+            <li>For Fedora, install the GCC C++ compiler (as root) by using dnf install gcc-c++</li>
+            <li>For Mandrake, install the GCC C++ compiler (as root) by using urpmi gcc-c++</li>
+            <li>For Debian, install the GCC C++ compiler (as root) by using apt-get install g++</li>
+            <li>For Ubuntu, install the GCC C++ compiler by using sudo apt-get install g++</li>
+            <li>For openSUSE, install the GCC C++ compiler (as root) by using zypper in gcc-c++</li>
+        </ul>
+    </body>
+    <footer>
+        <p>References: <a href="https://en.wikibooks.org/wiki/C%2B%2B_Programming/Compiler/Where_to_get">https://en.wikibooks.org/wiki/C%2B%2B_Programming/Compiler/Where_to_get</a>
+    </footer>
+</html>
