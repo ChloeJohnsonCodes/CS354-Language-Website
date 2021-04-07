@@ -1,0 +1,22 @@
+body {
+    background-color: #BAE7EF;
+    padding-left: 120px;
+}
+
+.headingpic {
+    width: 70px;
+    height: 70px;
+    margin-right: 25px;
+    vertical-align: bottom;
+}
+h1 {
+    font-family: luminari, "brush script MT", courier;
+    color: #203459;
+    margin-left: -130px;
+    margin-top: -10px;
+    margin-right: -10px;
+    font-size: 48px;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: white;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <title>Simple Sum: C++</title>
+  <body>
+    <h1>Simple Sum in C++</h1>
+    <h3>Author: Hannah Jacobson</h3>
+    <h3>Simple Sum</h3>
+    <p>After writing their first Hello World! program, programmers will often write subsequent programs to determine how the language works. The following program, Simple Sum, shows how variables are initialized, how values are assigned to variables, and how values are updated.</p>
+    <p>
+      <pre>
+        <code>
+            /* Simple Sum
+             * This program demonstrates how to declare a variable and
+             * add to it.
+             */
+
+            #include <iostream>                 //Include the iostream library
+                
+            int main()                          //Declare your main function
+            {
+                int sum;                        //Declare your integer variable "sum".
+                sum = 1;                        //Sum was not initialized to zero, so we must define its value
+                sum = sum + 1;                  //Then, we can add one to the value and update sum
+                
+                std::cout<<"Sum of 1 + 1 = " << sum;      //Write "Sum of 1 + 1 = " to the standard output,
+                                                          //followed by the value referenced by the sum variable.
+
+                return 0;                       //End with a return code of 0
+            }
+        </code>
+        <samp>
+            Output: Sum of 1 + 1 = 2
+        </samp>
+      </pre>
+    </p>
+    <a href="Simple_Sum.cpp" download>Download Simple Sum</a>
+    <h3>To Compile and Run:</h3>
+    <p>
+      <ol>
+        <li>g++ -o simplesum Simple_Sum.cpp</li>
+        <li>./simplesum</li>
+      </ol>
+    </p>
+  </body>
+</html>
+
