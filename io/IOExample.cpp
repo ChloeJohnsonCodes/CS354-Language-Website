@@ -86,6 +86,7 @@ int main() {
         cout << "Lets try that again. Please enter your name: ";
         getline(cin, name);
     }
+
     if(cin.fail()){
         cin.clear();
     }
@@ -128,7 +129,7 @@ int main() {
     cout << "What are three hobbies you enjoy?" << endl;
     while(numHobbies != 3){
         string temp;
-        cin >> temp;
+        getline(cin, temp);
         hobbies.push_back(temp);
         numHobbies++;
     }

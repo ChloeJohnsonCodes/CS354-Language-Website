@@ -44,11 +44,13 @@
     </dl>
       </p>
     <h3>I/O Program</h3>
-    <p>***Brief explanation on the I/O program***</p>
+    <p>This program demonstrates IO in C++. It is a command line application that allows students to introduce themselves to their
+        classmates/professor in times of a pandemic. It prompts the user with various questions and awaits user input.
+        After all questions have been answered a file is then prepared that allows the user to send it off to introduce themselves!</p>
     <p>
       <pre>
         <code>
-          /*check_number: checks user input if it contains a digit
+/*check_number: checks user input if it contains a digit
  *  str: user input
  *  return: true if a digit is detected; else false
  */
@@ -99,6 +101,7 @@ int main() {
         cout << "Lets try that again. Please enter your name: ";
         getline(cin, name);
     }
+
     if(cin.fail()){
         cin.clear();
     }
@@ -141,7 +144,7 @@ int main() {
     cout << "What are three hobbies you enjoy?" << endl;
     while(numHobbies != 3){
         string temp;
-        cin >> temp;
+        getline(cin, temp);
         hobbies.push_back(temp);
         numHobbies++;
     }
@@ -169,27 +172,28 @@ int main() {
 
     return 0;
 }
+
         </code>
         <samp>
-          Welcome to the class. This application allows us to get to know you faster by asking a series of questions.
-          Afterwards, your responses will be saved in a file that you can then share with the professor.
-          Thanks for your participation. I cannot wait to get to know you!
-          Lets get started by entering your name:
-            Steely Dan
-          Hello Steely Dan it is nice to meet you.
-          What is your age:
-            51
-          Your age is 51
-          What is your major:
-            Computer Science
-          That is a great major!
-          What are three hobbies you enjoy?
-            Hiking
-            Coding
-            Reading
-          Thanks for the information. It is nice to get to know you
-          Please wait while your file is prepared to share with your professor. . . .
-          Your file has been prepared and ready to be shared! Thanks.
+          > Welcome to the class. This application allows us to get to know you faster by asking a series of questions.
+            Afterwards, your responses will be saved in a file that you can then share with the professor.
+            Thanks for your participation. I cannot wait to get to know you!
+          > Lets get started by entering your name:
+             Steely Dan
+          > Hello Steely Dan it is nice to meet you.
+          > What is your age:
+             51
+          > Your age is 51
+          > What is your major:
+             Computer Science
+          > That is a great major!
+          > What are three hobbies you enjoy?
+             Hiking
+             Coding
+             Reading
+          > Thanks for the information. It is nice to get to know you
+            Please wait while your file is prepared to share with your professor. . . .
+            Your file has been prepared and ready to be shared! Thanks.
         </samp>
       </pre>
     </p>
