@@ -9,7 +9,7 @@ using namespace std;
 // C++ uses an abstraction called "streams" which represent a device on which to perform input and output operations. This abstraction
 // makes the live of the programmer much easier as a stream object acts as an intermediary between the program and actual IO devices
 // and handles the device so the programmer does not have to.
-
+//
 //      The C++ standard library defines 4 main stream objects including:
 //          cin : standard input stream
 //          cout: standard output stream
@@ -19,8 +19,8 @@ using namespace std;
 // IO Features of C++:
 //        1. Type safe
 //        2. Formatted and formatted options
-
-
+//
+//
 //Syntax for IO operations:
 //      Insertion operator: <<
 //          To build a statement multiple insertion operators may b e chained in a single statement:
@@ -86,6 +86,7 @@ int main() {
         cout << "Lets try that again. Please enter your name: ";
         getline(cin, name);
     }
+
     if(cin.fail()){
         cin.clear();
     }
@@ -128,7 +129,7 @@ int main() {
     cout << "What are three hobbies you enjoy?" << endl;
     while(numHobbies != 3){
         string temp;
-        cin >> temp;
+        getline(cin, temp);
         hobbies.push_back(temp);
         numHobbies++;
     }
