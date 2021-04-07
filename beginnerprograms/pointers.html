@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <title>Perplexing Pointers: C++</title>
+  <body>
+    <h1>Perplexing Pointers in C++</h1>
+    <h3>Author: Chloe Johnson</h3>
+    <h3>Perplexing Pointers in C++</h3>
+    <p>Pointers are seen in languages such as BASIC, C, and C#. C++ also contains pointers, so it's important that C++ programmers understand how pointers are used. A pointer is an object that stores a memory address. Therefore, pointers can be used to reference a location in memory. In this program, it's shown how pointers reference addresses, how pointers are dereferenced, and how pointer arithmetic is performed.</p>
+    <p>
+      <pre>
+        <code>
+            #include <iostream>
+
+            int main() {
+            
+                /* This program assigns addresses to pointers, dereferences pointers, and performs
+                 * pointer arithmetic.
+                 */
+                 
+                int a = 2, b = 10, c = 22;
+                int *pointer1, *pointer2, *pointer3;
+                pointer1 = &a;
+                pointer2 = &b;
+                pointer3 = &c;
+                a = *pointer1 * *pointer2 * *pointer3;
+                b = *pointer1 + *pointer2 + *pointer3;
+                c = *pointer1 - *pointer2 - *pointer2;
+                pointer1++; // Changing the location of the pointer. a can no longer be referenced by pointer1
+                pointer3 = pointer2; // pointer2 is assigned to pointer3. Now pointer3 references b.
+                std::cout << "a location: " << &a << " pointer1 location: " << pointer1 << " pointer1: " << *pointer1 << std::endl;
+                std::cout << "b location: " << &b << " pointer2 location: " << pointer2 << " pointer2: " << *pointer2 << std::endl;
+                std::cout << "c location: " << &c << " pointer3 location: " << pointer3 << " pointer3: " << *pointer3 << std::endl;
+                return 0;
+            }
+        </code>
+        <samp>
+            Output: a location: 0x7ffee43d0958 pointer1 location: 0x7ffee43d095c pointer1: 0
+                    b location: 0x7ffee43d0954 pointer2 location: 0x7ffee43d0954 pointer2: 472
+                    c location: 0x7ffee43d0950 pointer3 location: 0x7ffee43d0954 pointer3: 472
+        </samp>
+      </pre>
+    </p>
+    <a href="pointers.cpp" download>Download Perplexing Pointers</a>
+    <h3>To Compile and Run:</h3>
+    <p>
+      <ol>
+        <li>g++ -o pointers pointers.cpp</li>
+        <li>./pointers</li>
+      </ol>
+    </p>
+  </body>
+</html>
+
+
