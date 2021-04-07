@@ -33,13 +33,6 @@ char* getMajor(Student* student){
     student->major;
 };
 
-void DestroyStudent(Student * thisStudent) {
-    if (thisStudent == NULL) {
-        return;
-    }
-
-    free(thisStudent);
-}
 
 
 

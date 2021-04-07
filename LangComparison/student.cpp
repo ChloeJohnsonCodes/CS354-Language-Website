@@ -27,8 +27,9 @@ void Student::setMajor(string maj) {
 
 
 int main() {
-    Student student;
-    cout << student.getMajor() << endl;
-    student.setMajor("Computer Science");
-    cout << student.getMajor();
+    Student* student = new Student();
+    cout << student->getMajor() << endl;
+    student->setMajor("Computer Science");
+    cout << student->getMajor();
+    delete(student);
 }
