@@ -141,8 +141,8 @@ int main() {
     if(myFile.is_open()){
         myFile << "My name is " << name << " and I am " << age << " years old. " << endl;
         myFile << "I am currently studying " << major << " at BSU" << endl;
-        for(auto& hobby: hobbies) {
-            myFile << hobby << " ";
+        for(int i=0; i < hobbies.size();i++) {
+            myFile << hobbies[i] << " ";
         }
         myFile.close();
     }
