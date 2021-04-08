@@ -1,6 +1,7 @@
 body {
     background-color: #BAE7EF;
     padding-left: 120px;
+    margin-right: 120px;
 }
 
 .headingpic {
@@ -14,7 +15,7 @@ h1 {
     color: #203459;
     margin-left: -130px;
     margin-top: -10px;
-    margin-right: -10px;
+    margin-right: -120px;
     font-size: 48px;
     padding: 10px;
     padding-left: 20px;
