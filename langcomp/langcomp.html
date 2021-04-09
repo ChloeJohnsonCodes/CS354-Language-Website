@@ -5,43 +5,195 @@
     <!-- Feel free to change the header wrapped in the <h1> tag -->
     <h1>C++ Language Comparison</h1>
     <h3>Authors: Hannah Jacobson and Ian Whitney</h3>
-    <p>***Insert Hannah's plaintext comparison in this area***</p>
-    <h3>*1st Program Title*</h3>
-    <p>***Brief explanation on program***</p>
+    
+    <table style="height: 126px; width: 100%; border-collapse: collapse; border-style: double;" border="3">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; text-align: center; height: 18px;"><strong>C++</strong></td>
+<td style="width: 33.3333%; text-align: center; height: 18px;"><strong>C</strong></td>
+<td style="width: 33.3333%; text-align: center; height: 18px;"><strong>Java</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">Supports Object Orientation</td>
+<td style="width: 33.3333%; height: 18px;">Procedural</td>
+<td style="width: 33.3333%; height: 18px;">Object Oriented</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">Manual Memory Management</td>
+<td style="width: 33.3333%; height: 18px;">Manual Memory Management</td>
+<td style="width: 33.3333%; height: 18px;">Garbage Collection</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">Supports Header Files</td>
+<td style="width: 33.3333%; height: 18px;">Header Files</td>
+<td style="width: 33.3333%; height: 18px;">No Header Files</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">Compiled</td>
+<td style="width: 33.3333%; height: 18px;">Compiled</td>
+<td style="width: 33.3333%; height: 18px;">Interpreted</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">Multiple Inheritence</td>
+<td style="width: 33.3333%; height: 18px;">No Inheritence</td>
+<td style="width: 33.3333%; height: 18px;">Singular Inheritence</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">Structs and Unions</td>
+<td style="width: 33.3333%; height: 18px;">Structs and Unions</td>
+<td style="width: 33.3333%; height: 18px;">No Structs or Unions</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">Pointer Arithmetic</td>
+<td style="width: 33.3333%; height: 18px;">Pointer Arithmetic</td>
+<td style="width: 33.3333%; height: 18px;">No Traditional Pointers</td>
+</tr>
+</tbody>
+</table>
+    
+    <p>C++ was designed to be a mix of C's low-level funtionality and object orientation. The implementation of these 
+      ideas created a very flexible language that can be used for systems programming, database software, and even game development. </p> 
+
+      <p>The object orientation in C++ is easily comparable to the object orientation found in Java. While C++ may not be as universally 
+      portable as Java, both languages allow the use of inheritence, polymorphism, method overloading, and encapsulation when writing classes. 
+      Even with these similarities, C++ does have its moments to shine - the language allows multiple inheritence and defining methods outside 
+      of a class, for example, unlike Java. C++ also allows a declared object to be a variable, where Java does not. </p>
+
+      <p>Where C++ differs even more from Java is its foundational codebase in C. C++ utilizes manual memory management, making it a suitable 
+      language for systems programming. C++ also copies C's approach to pointers, pointer arithmetic, structs, unions, and header files.</p> 
+
+      <p>All this to say, C++ is often seen as "C with classes".</p>
+    
+      <p>The same program, Student, has been written in C, C++, and Java to demonstrate some of these differences. C makes use of a struct in order to 
+        construct a student, while C++ and Java create a class in their own ways.</p>
+    <h3>Student.java</h3>
+    <p>The student program as implemented in Java</p>
       <pre>
         <code>
-            *code snippet for program*
+        public class Student {
+          private String major;
+
+          public Student() {
+            this.major = "Undecided";
+          }
+
+          public String getMajor() {
+            return major;
+          }
+
+          public void setMajor(String major) {
+            this.major = major;
+          }
+
+          public static void main(String[] args) {
+            Student student = new Student();
+            System.out.println(student.getMajor());
+            student.setMajor("Computer Science");
+            System.out.println(student.getMajor());
+          }
+        }
         </code>
         <samp>
-            *sample output*
+            Output: Undecided 
+            Computer Science
         </samp>
       </pre>
     </p>
-    <a href="!!!IMPORTANT!!!! INSERT DOWNLOAD LINK" download>Download *Insert Program Name*</a>
-    <h3>*2nd Program Title*</h3>
-    <p>***Brief explanation on program***</p>
+    <a href="Student.java" download>Download Student.java</a>
+    <h3>Student.c</h3>
+    <p>The student program as implemented in C, ustilizing a struct in place of a class.</p>
       <pre>
         <code>
-            *code snippet for program*
+        #include<stdio.h>
+        #include<string.h>
+        #include<stdlib.h>
+
+        struct student_object_struct {
+          char major[40];
+        };
+        typedef struct student_object_struct Student;
+
+        Student* CreateStudent() {
+          Student * newStudent = (Student *) malloc(sizeof(Student));
+
+          if(newStudent == NULL){
+            return NULL;
+          }
+          strncpy(newStudent->major, "Undecided", 40);
+
+          return newStudent;
+        };
+
+        Student* setMajor(Student* student, const char major[]){
+          if(student == NULL) {
+            return NULL;
+          }
+          strncpy(student->major, major,40);
+          return student;
+        };
+
+        char* getMajor(Student* student){
+          student->major;
+        };
+
+        int main() {
+          Student* student = CreateStudent("Undecided");
+
+          if(student == NULL){
+            return 1;
+          }
+
+          printf("%s \n", getMajor(student));
+          setMajor(student, "Computer Science");
+
+          printf("%s", getMajor(student));
+
+          free(student);
+ 
+          return 0;
+        }
         </code>
         <samp>
-            *sample output*
+            Output: Undecided 
+            Computer Science
         </samp>
       </pre>
     </p>
-    <a href="!!!IMPORTANT!!!! INSERT DOWNLOAD LINK" download>Download *Insert Program Name*</a>
-    <h3>*3rd Program Title*</h3>
-    <p>***Brief explanation on program***</p>
+    <a href="student.c" download>Download Student.c</a>
+    <h3>Student.cpp</h3>
+    <p>The student program as implemented in C++.</p>
       <pre>
         <code>
-            *code snippet for program*
+        #include <iostream>
+
+        using namespace std;
+
+        class Student {
+          string major = "Undecided";
+          public:
+            void setMajor (string major);
+            string getMajor() {return major;}
+        };
+
+        void Student::setMajor(string maj) {
+          major = maj;
+        }
+
+        int main() {
+          Student* student = new Student();
+          cout << student->getMajor() << endl;
+          student->setMajor("Computer Science");
+          cout << student->getMajor();
+          delete(student);
+        }
         </code>
         <samp>
-            *sample output*
+            Output: Undecided 
+            Computer Science
         </samp>
       </pre>
     </p>
-    <a href="!!!IMPORTANT!!!! INSERT DOWNLOAD LINK" download>Download *Insert Program Name*</a>
+    <a href="student.cpp" download>Download Student.cpp</a>
   </body>
 </html>
 
