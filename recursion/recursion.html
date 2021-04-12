@@ -17,6 +17,50 @@
       <pre>
         <code>
             *code snippet for fibonacci sequence*
+            #include <iostream>
+using namespace std;
+
+int fibonacci(int userInput) 
+{
+
+    /**
+     * Checks if the base case for the first two terms is zero and one and returns the same value 
+     * because there won't be any changes in position zero and one.
+     * fib(0) = 0 -base case 1
+     * fib(1) = 1 - base case 2
+     */
+    if (userInput == 0 || userInput == 1) {
+        return userInput;
+    }
+    
+    //Adds the two previous values to get the next.
+    else {
+        return fibonacci(userInput-1) + fibonacci(userInput-2);
+    }
+
+}
+
+int main() 
+{
+    int userInput;
+    int x = 0;
+
+    //Displays the prompt to the screen
+    cout << "Enter the number of terms you want displayed: ";
+    
+    //Accepts the user input from the keyboard.
+    cin >> userInput;
+
+    for (int i = 1; i <= userInput; i++) {
+        
+        //Stores the output of the evaluated fibonacci method to the result variable.
+        int result = fibonacci(x);
+        
+        //Displays the result of the user input to the screen as an integer variable.
+        cout << result << " ";
+        x++;
+    }
+}
             
         </code>
         <samp>
