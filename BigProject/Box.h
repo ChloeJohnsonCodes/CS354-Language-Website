@@ -27,9 +27,9 @@ class Box {
         int SetValue(int val);     
     
         /* IfEmpty: Check to see if the box is empty (has a value of 0). 
-         *       return: 1 if true, -1 if false
+         *       return: true, false
          */
-        int IfEmpty();          
+        bool IfEmpty();          
         
         /* PrintBox: Print the character associated with the box's value. 
          * 0 = " ", 1 = "X", 2 = "O"
