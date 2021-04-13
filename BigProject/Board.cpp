@@ -12,11 +12,11 @@
      
  }
  
- int Board::IfWinner(){
+ bool Board::IfWinner(){
      
  }
  
- int Board::IfFilled(){
+ bool Board::IfFilled(){
      
  }
  
