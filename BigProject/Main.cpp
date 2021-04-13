@@ -76,9 +76,12 @@ int main() {
 
             callCheck = false;
         }
-
+        //gets user's menu choice
         int rc;
         rc = scanf(" %c", &userInput);
+        //if more than one input character is given stdin is cleared so loop doesnt run multiple times
+        fflush(stdin);
+        //validate to check if error has been thrown
         if(rc < 0) {
             cerr<< "An error has occurred please restart the program and try again" << endl;
             return 1;
@@ -91,17 +94,15 @@ int main() {
                 cout<<"Goodbye!";
                 return 0;
             case 'p':
-                //game play
+                //TODO game play functionality
                 break;
             default:
                 cout<<"Invalid Menu Selection" << endl;
                 cout<<"Please try again: " <<endl;
                 callCheck = true;
+                break;
         }
-
-
-
-
+        
     }
 
     return 0;
