@@ -15,7 +15,7 @@
      
  }
    
- int Box::IfEmpty(){
+ bool Box::IfEmpty(){
      
  }
    
