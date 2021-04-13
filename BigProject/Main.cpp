@@ -27,6 +27,9 @@ bool check_number(string str) {
 int main() {
     string player1;
     string player2;
+    char userInput;
+    bool keepRunning = true;
+    bool callCheck = true;
 
     cout<< "Welcome to TicTacToe" << endl;
     cout<< "We will start with getting each players names" << endl;
@@ -62,10 +65,44 @@ int main() {
 
     cout << "Welcome " + player2 << endl;
     cout << "Let's get started now . . .";
+    cout << "Choose an option: " << endl;
+
+
+    while(keepRunning) {
+        if(callCheck) {
+            cout<<"Menu:" << endl;
+            cout<< "p - Play Game" << endl;
+            cout<< "q - Quit " << endl;
+
+            callCheck = false;
+        }
+
+        int rc;
+        rc = scanf(" %c", &userInput);
+        if(rc < 0) {
+            cerr<< "An error has occurred please restart the program and try again" << endl;
+            return 1;
+        }
+
+        userInput = tolower(userInput);
+
+        switch(userInput) {
+            case 'q':
+                cout<<"Goodbye!";
+                return 0;
+            case 'p':
+                //game play
+                break;
+            default:
+                cout<<"Invalid Menu Selection" << endl;
+                cout<<"Please try again: " <<endl;
+                callCheck = true;
+        }
 
 
 
 
+    }
 
     return 0;
 }
