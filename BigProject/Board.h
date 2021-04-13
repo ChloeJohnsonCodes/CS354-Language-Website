@@ -19,14 +19,14 @@ class Board {
          * A winner is found if the same value, 1 or 2, spans a "row",
          * "column", or "diagonal". This does not return true for
          * the zero value
-         *      return: 1 if true, -1 if false
+         *      return: true, false
          */
-        int IfWinner();          
+        bool IfWinner();          
     
         /* IfFilled: Determine if the gameboard is full
-         *      return: 1 if true, -1 if false
+         *      return: true, false
          */
-        int IfFilled();  
+        bool IfFilled();  
     
         /* PrintBoard: Print an ascii representation of the board, calling
          * the PrintBox() method to print each box's value between the lines
