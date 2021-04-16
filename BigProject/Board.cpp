@@ -8,13 +8,10 @@
     Box boardArray[9];
  }
  
- int Board::ClearBoard(){
+ void Board::ClearBoard(){
      for (int i = 0; i < 9; i++) {
-         if(boardArray[i].SetValue(0) == -1) {
-             return -1;
-         }
+         boardArray[i].SetValue(0)
      }
-     return 1;
  }
  
  bool Board::IfWinner(){
