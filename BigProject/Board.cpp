@@ -21,6 +21,9 @@
  }
  
  void Board::PrintBoard(){
-     
- } 
- 
+     std::cout<<" "<<boardArray[0].PrintBox() << " | " << boardArray[1].PrintBox << " | " << boardArray[2].PrintBox << "\n";
+     std::cout<<"---+---+---\n";
+     std::cout<<" "<<boardArray[3].PrintBox() << " | " << boardArray[4].PrintBox << " | " << boardArray[5].PrintBox << "\n";
+     std::cout<<"---+---+---\n";
+     std::cout<<" "<<boardArray[6].PrintBox() << " | " << boardArray[7].PrintBox << " | " << boardArray[8].PrintBox << "\n";
+ }
