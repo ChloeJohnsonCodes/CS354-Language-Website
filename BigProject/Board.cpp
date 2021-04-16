@@ -10,7 +10,7 @@
  
  void Board::ClearBoard(){
      for (int i = 0; i < 9; i++) {
-         boardArray[i].SetValue(0)
+         boardArray[i].SetValue(0);
      }
  }
  
