@@ -7,10 +7,11 @@
  Board::Board(){
     Box boardArray[9];
  }
-
- int Board::ClearBoard(){
-
- }
+ 
+ void Board::ClearBoard(){
+     for (int i = 0; i < 9; i++) {
+         boardArray[i].SetValue(0);
+     }
 
  bool Board::IfWinner()
  {
@@ -35,7 +36,13 @@
  }
 
  bool Board::IfFilled(){
-
+     bool filled = true;
+     for (int i = 0; i < 9; i++) {
+         if (boardArray[i].IfEmpty()) {
+             filled = false;
+         }
+     }
+     return filled;
  }
 
  void Board::PrintBoard(){
