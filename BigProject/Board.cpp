@@ -5,7 +5,8 @@
  #include "Box.h"
 
  Board::Board(){
-    Box boardArray[9];
+//    Box boardArray[9];
+//    private int numberOfMoves
  }
  
  void Board::ClearBoard(){
@@ -18,21 +19,24 @@
      bool winner = false;
 
      //checks the rows
-     if((board[0]==board[1]) && (board[1]==board[2]) && board[0] != 0)
+     if((boardArray[0]==boardArray[1]) && (boardArray[1]==boardArray[2]) && boardArray[0] != 0)
      {
          winner = true;
      }
-     else if ((board[3] == board[4]) && (board[4] == board[5]) && board[3] != 0)
-     {
-         winner = true;
-     }
-
-     else if ((board[6] == board[7]) && (board[7] == board[8]) && board[6] != 0)
+     else if ((boardArray[3] == boardArray[4]) && (boardArray[4] == boardArray[5]) && boardArray[3] != 0)
      {
          winner = true;
      }
 
+     else if ((boardArray[6] == boardArray[7]) && (boardArray[7] == boardArray[8]) && boardArray[6] != 0)
+     {
+         winner = true;
+     } else if(numberOfMoves >= 9){
+        winner = true;
+     }
+ }
 
+    return winner;
  }
 
  bool Board::IfFilled(){

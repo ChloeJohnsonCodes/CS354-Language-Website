@@ -2,6 +2,9 @@
  * Each board contains an array of nine boxes
  */
 class Board {
+private:
+    Box boardArray[];
+    int numberOfMoves;
     public:                         
     
         /* Board: Board declaration. Initializes an array of nine
