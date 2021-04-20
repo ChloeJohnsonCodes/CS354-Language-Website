@@ -19,45 +19,45 @@
      bool winner = false;
 
      //checks the rows for a winner
-     if((boardArray[0]==boardArray[1]) && (boardArray[1]==boardArray[2]) && boardArray[0] != 0)
+     if((boardArray[0].GetValue()==boardArray[1]).GetValue() && (boardArray[1].GetValue()==boardArray[2].GetValue()) && boardArray[0].GetValue() != 0)
      {
          winner = true;
      }
-     else if ((boardArray[3] == boardArray[4]) && (boardArray[4] == boardArray[5]) && boardArray[3] != 0)
+     else if((boardArray[3].GetValue() == boardArray[4].GetValue()) && (boardArray[4].GetValue() == boardArray[5].GetValue()) && boardArray[3].GetValue() != 0)
      {
          winner = true;
      }
 
-     else if ((boardArray[6] == boardArray[7]) && (boardArray[7] == boardArray[8]) && boardArray[6] != 0)
+     else if ((boardArray[6].GetValue() == boardArray[7].GetValue()) && (boardArray[7].GetValue() == boardArray[8].GetValue()) && boardArray[6].GetValue() != 0)
      {
          winner = true;
      }
 
          //checks the columns for a winner
 
-     else if((boardArray[0]==boardArray[3]) && (boardArray[3]==boardArray[6]) && boardArray[0] != 0)
+     else if((boardArray[0].GetValue()==boardArray[3].GetValue()) && (boardArray[3].GetValue()==boardArray[6].GetValue()) && boardArray[0].GetValue() != 0)
      {
          winner = true;
      }
 
-     else if ((boardArray[1] == boardArray[4]) && (boardArray[4] == boardArray[7]) && boardArray[1] != 0)
+     else if ((boardArray[1].GetValue() == boardArray[4].GetValue()) && (boardArray[4].GetValue() == boardArray[7].GetValue()) && boardArray[1].GetValue() != 0)
      {
          winner = true;
      }
 
-     else if ((boardArray[2] == boardArray[5]) && (boardArray[5] == boardArray[8]) && boardArray[2] != 0)
+     else if ((boardArray[2].GetValue() == boardArray[5].GetValue()) && (boardArray[5].GetValue() == boardArray[8].GetValue()) && boardArray[2].GetValue() != 0)
      {
          winner = true;
      }
 
          //checks the diagonals for a winner
 
-     else if ((boardArray[0]==boardArray[4]) && (boardArray[4]==boardArray[8]) && boardArray[0] != 0)
+     else if ((boardArray[0].GetValue()==boardArray[4].GetValue()) && (boardArray[4].GetValue()==boardArray[8].GetValue()) && boardArray[0].GetValue() != 0)
      {
          winner = true;
      }
 
-     else if ((boardArray[2]==boardArray[4]) && (boardArray[4]==boardArray[6]) && boardArray[2] != 0)
+     else if ((boardArray[2].GetValue()==boardArray[4].GetValue()) && (boardArray[4].GetValue()==boardArray[6].GetValue()) && boardArray[2].GetValue() != 0)
      {
          winner = true;
      }
