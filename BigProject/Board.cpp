@@ -18,7 +18,7 @@
  {
      bool winner = false;
 
-     //checks the rows
+     //checks the rows for a winner
      if((boardArray[0]==boardArray[1]) && (boardArray[1]==boardArray[2]) && boardArray[0] != 0)
      {
          winner = true;
@@ -31,9 +31,44 @@
      else if ((boardArray[6] == boardArray[7]) && (boardArray[7] == boardArray[8]) && boardArray[6] != 0)
      {
          winner = true;
-     } else if(numberOfMoves >= 9){
-        winner = true;
      }
+
+         //checks the columns for a winner
+
+     else if((boardArray[0]==boardArray[3]) && (boardArray[3]==boardArray[6]) && boardArray[0] != 0)
+     {
+         winner = true;
+     }
+
+     else if ((boardArray[1] == boardArray[4]) && (boardArray[4] == boardArray[7]) && boardArray[1] != 0)
+     {
+         winner = true;
+     }
+
+     else if ((boardArray[2] == boardArray[5]) && (boardArray[5] == boardArray[8]) && boardArray[2] != 0)
+     {
+         winner = true;
+     }
+
+         //checks the diagonals for a winner
+
+     else if ((boardArray[0]==boardArray[4]) && (boardArray[4]==boardArray[8]) && boardArray[0] != 0)
+     {
+         winner = true;
+     }
+
+     else if ((boardArray[2]==boardArray[4]) && (boardArray[4]==boardArray[6]) && boardArray[2] != 0)
+     {
+         winner = true;
+     }
+
+     return winner;
+
+ }
+
+//     else if(numberOfMoves >= 9){
+//        winner = true;
+//     }
  }
 
     return winner;
