@@ -34,5 +34,5 @@ class Box {
         /* PrintBox: Print the character associated with the box's value. 
          * 0 = " ", 1 = "X", 2 = "O"
          */
-        void PrintBox();            
+        char PrintBox();            
 };
