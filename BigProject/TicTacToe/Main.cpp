@@ -127,6 +127,13 @@ int main() {
                         
                         cin >> playerChoice;
                         
+                         while(cin.fail()){
+                            cout<< "Please enter a number: ";
+                            cin.clear();
+                            cin.ignore(256, '\n');
+                            cin >> playerChoice; 
+                        }
+                        
                         while(playerChoice > 9 || playerChoice < 0){
                             cout<< "That spot is not real! Pick another: ";
                             cin >> playerChoice;
