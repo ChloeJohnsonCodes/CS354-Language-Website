@@ -1,25 +1,38 @@
 /* Board class definitions
  */
 
- #include "Board.h"
  #include "Box.h"
+ #include "Board.h"
+ #include <iostream>
+ 
+ using namespace std;
 
  Board::Board(){
-//    Box boardArray[9];
-//    private int numberOfMoves
+     for (int i = 0; i < 9; i++) {
+         boardArray[i].SetValue(0);
+     }
  }
  
  void Board::ClearBoard(){
      for (int i = 0; i < 9; i++) {
          boardArray[i].SetValue(0);
      }
+}
+
+ void Board::SetBox(int index, int val){
+     boardArray[index].SetValue(val);
+ }
+ 
+ Box Board::GetBox(int index){
+     return boardArray[index];
+ }
 
  bool Board::IfWinner()
  {
      bool winner = false;
 
      //checks the rows for a winner
-     if((boardArray[0].GetValue()==boardArray[1]).GetValue() && (boardArray[1].GetValue()==boardArray[2].GetValue()) && boardArray[0].GetValue() != 0)
+     if((boardArray[0].GetValue()==boardArray[1].GetValue()) && (boardArray[1].GetValue()==boardArray[2].GetValue()) && boardArray[0].GetValue() != 0)
      {
          winner = true;
      }
@@ -66,13 +79,6 @@
 
  }
 
-//     else if(numberOfMoves >= 9){
-//        winner = true;
-//     }
- }
-
-    return winner;
- }
 
  bool Board::IfFilled(){
      bool filled = true;
@@ -83,11 +89,12 @@
      }
      return filled;
  }
+ 
 
  void Board::PrintBoard(){
-     std::cout<<" "<<boardArray[0].PrintBox() << " | " << boardArray[1].PrintBox() << " | " << boardArray[2].PrintBox() << "\n";
-     std::cout<<"---+---+---\n";
-     std::cout<<" "<<boardArray[3].PrintBox() << " | " << boardArray[4].PrintBox() << " | " << boardArray[5].PrintBox() << "\n";
-     std::cout<<"---+---+---\n";
-     std::cout<<" "<<boardArray[6].PrintBox() << " | " << boardArray[7].PrintBox() << " | " << boardArray[8].PrintBox() << "\n";
+     cout<<" " << boardArray[0].PrintBox() << " | " << boardArray[1].PrintBox() << " | " << boardArray[2].PrintBox() << "\n";
+     cout<<"---+---+---\n";
+     cout<<" "<<boardArray[3].PrintBox() << " | " << boardArray[4].PrintBox() << " | " << boardArray[5].PrintBox() << "\n";
+     cout<<"---+---+---\n";
+     cout<<" "<<boardArray[6].PrintBox() << " | " << boardArray[7].PrintBox() << " | " << boardArray[8].PrintBox() << "\n";
  }
