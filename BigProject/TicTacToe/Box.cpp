@@ -19,6 +19,14 @@ int Box::SetValue(int val){
      return value == 0;
  }
    
- void Box::PrintBox(){
-     std::cout << value << " ";
+ char Box::PrintBox(){
+     char ret = ' ';
+     if(value == 1){
+        ret = 'X' ;
+     }
+     else if(value == 2){
+        ret = 'O';
+     }
+     
+     return ret;
  }
