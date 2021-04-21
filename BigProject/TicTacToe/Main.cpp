@@ -7,6 +7,9 @@
 
 using namespace std;
 
+#include "Box.h"
+#include "Board.h"
+
 /*check_number: checks user input if it contains a digit
  *  str: user input
  *  return: true if a digit is detected; else false
@@ -30,14 +33,17 @@ int main() {
     char userInput;
     bool keepRunning = true;
     bool callCheck = true;
+    int currentPlayer = 0;
+    Board gameBoard;
+    int playerChoice = 0;
 
     cout<< "Welcome to TicTacToe" << endl;
-    cout<< "We will start with getting each players names" << endl;
+    cout<< "We will start with getting each players names. Player1: " << endl;
 
     getline(cin, player1);
     //validate input ensuring user input a name
     while (check_number(player1)){
-        cout << "Try again Looks like you entered a number " + player1 << endl;
+        cout << "Try again Looks like you entered a number: " + player1 << endl;
         cout << "Lets try that again. Please enter your name: " << endl;
         getline(cin, player1);
     }
@@ -48,12 +54,12 @@ int main() {
     }
 
     cout << "Welcome " + player1 << endl;
-    cout << "Now, its time to meet your opponent" << endl;
+    cout << "Now, its time to meet your opponent. Player2: " << endl;
 
     getline(cin, player2);
     //validate input ensuring user input a name
     while (check_number(player2)){
-        cout << "Try again Looks like you entered a number " << player2 << endl;
+        cout << "Try again Looks like you entered a number: " << player2 << endl;
         cout << "Lets try that again. Please enter your name: ";
         getline(cin, player2);
     }
@@ -70,7 +76,7 @@ int main() {
 
     while(keepRunning) {
         if(callCheck) {
-            cout<<"Menu:" << endl;
+            cout<<"\nMenu:" << endl;
             cout<< "p - Play Game" << endl;
             cout<< "q - Quit " << endl;
 
@@ -95,6 +101,65 @@ int main() {
                 return 0;
             case 'p':
                 //TODO game play functionality
+                    currentPlayer = 2;
+                    gameBoard.ClearBoard();
+                    //!gameBoard.IfWinner() && !gameBoard.IfFilled()
+                    
+                    while(!gameBoard.IfWinner() && !gameBoard.IfFilled()){
+                        if(currentPlayer == 1){ 
+                            currentPlayer = 2;
+                        }
+                        else{
+                            currentPlayer = 1;
+                        }
+                        
+                        cout<<"\n";
+                    
+                        gameBoard.PrintBoard();
+                        
+                        cout<<"0|1|2 \n3|4|5 \n6|7|8 \n\n";
+                        if(currentPlayer == 1){
+                            cout<< player1 << ", choose a square: ";
+                        }
+                        else{
+                            cout<< player2 << ", choose a square: ";
+                        }
+                        
+                        cin >> playerChoice;
+                        
+                        while(playerChoice > 9 || playerChoice < 0){
+                            cout<< "That spot is not real! Pick another: ";
+                            cin >> playerChoice;
+                        }
+                        
+                        while(!gameBoard.GetBox(playerChoice).IfEmpty()){
+                            cout<< "That spot is taken! Pick another: ";
+                            cin >> playerChoice;
+                        }
+                        
+                        gameBoard.SetBox(playerChoice, currentPlayer);
+                        
+                        //Debugging
+                        //cout<< "Current player val: " << currentPlayer << "\n";
+                        //cout<< "Box chosen: " << playerChoice << "\n";
+                        //cout<< "Current place val: " << gameBoard.GetBox(playerChoice).PrintBox() << "\n";
+                        
+                    }
+                    if(!gameBoard.IfWinner()){
+                        cout<< "\n" << "It's a tie! Nice going, you two.\n\n";
+                    }
+                    else{
+                        if(currentPlayer == 1){
+                            cout<< "\n" << player1 << " wins!\n\n";
+                        }
+                        else{
+                            cout<< "\n" << player2 << " wins!\n\n";
+                        }
+                    }
+                    
+                    gameBoard.PrintBoard();
+                    
+                    callCheck = true;
                 break;
             default:
                 cout<<"Invalid Menu Selection" << endl;
