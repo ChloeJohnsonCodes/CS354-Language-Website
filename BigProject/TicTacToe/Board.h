@@ -1,9 +1,6 @@
-/* Header file for the Board class
- * Each board contains an array of nine boxes
- */
 class Board {
 private:
-    Box boardArray[];
+    Box boardArray[9];
     int numberOfMoves;
     public:                         
     
@@ -14,9 +11,17 @@ private:
         
         /* ClearBoard: Clear the gameboard. Set each box in the
          * array to have a value of 0
-         *      return: 1 on success, -1 on error
          */
-        int ClearBoard();
+        void ClearBoard();
+        
+        /* SetBox: Set the specified box in the array to a 
+         * given value
+         */
+        void SetBox(int index, int val);
+        
+        /* GetBox: Get the box at the specified index
+         */
+        Box GetBox(int index);
         
         /* IfWinner: Determine if there is a winner on the board. 
          * A winner is found if the same value, 1 or 2, spans a "row",
