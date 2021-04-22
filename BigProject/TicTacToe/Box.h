@@ -24,7 +24,7 @@ class Box {
          *      val: 0, 1, or 2
          *      return: 1 on success, -1 on error
          */
-        int SetValue(int val);     
+        void SetValue(int val);     
     
         /* IfEmpty: Check to see if the box is empty (has a value of 0). 
          *       return: true, false
