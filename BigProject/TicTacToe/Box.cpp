@@ -12,7 +12,7 @@ int Box::GetValue(){
 }
 
 int Box::SetValue(int val){
-    Box::value = value;
+    Box::value = val;
 }
    
  bool Box::IfEmpty(){
