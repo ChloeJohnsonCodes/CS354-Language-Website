@@ -11,7 +11,7 @@ int Box::GetValue(){
     return value;
 }
 
-int Box::SetValue(int val){
+void Box::SetValue(int val){
     Box::value = val;
 }
    
