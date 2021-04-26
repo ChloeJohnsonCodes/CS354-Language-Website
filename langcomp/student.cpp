@@ -8,12 +8,19 @@ class Student {
     string major = "Undecided";
 public:
     void setMajor (string major);
+    friend void printMajor(Student student);
     string getMajor() {return major;}
 };
 
 //scope operator (::, two colons)
+//Member function definition
 void Student::setMajor(string maj) {
     major = maj;
+}
+
+//not a member function of Student class but can still access private member major
+void printMajor(Student student){
+    cout<< "I am a " << student.major << " major! ";
 }
 
 
@@ -21,6 +28,9 @@ int main() {
     Student* student = new Student();
     cout << student->getMajor() << endl;
     student->setMajor("Computer Science");
-    cout << student->getMajor();
+    cout << student->getMajor() << "\n";
+
+    //Use of friend function to print the major
+    printMajor(*student);
     delete(student);
 }
