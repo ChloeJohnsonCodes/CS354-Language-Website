@@ -49,6 +49,10 @@
     <p>
       <pre>
         <code>
+#include &ltiostream&gt
+#include &lvector&gt
+#include &lstream&gt
+
 /*check_number: checks user input if it contains a digit
  *  str: user input
  *  return: true if a digit is detected; else false
@@ -69,20 +73,20 @@ bool check_number(string str) {
 int main() {
     //Variable creation
     //In C++, Strings are objects that represent a sequences of characters. The string class adds additional built-in functions
-//        to manipulate strings versus a character array like that seen in C. There is a difference - in memory allocation
-//        the size of a character array has to be allocated statically and more memory cannot be allocated at run time.
-//        This differs in the case of strings, memory is allocated dynamically and more memory can be allocated at run time.
-//        The trade off is that with strings no memory is wasted but implementation of a character array is faster.
-
+    //to manipulate strings versus a character array like that seen in C. There is a difference in memory allocation
+    //the size of a character array has to allocated statically and more memory cannot be allocated at run time.
+    //This differs in the case of strings, memory is allocated dynamical and more memory can be allocated at run time.
+    //The trade off is that strings no memory is wasted but implementation of character array is faster.
     string name;
     string major;
+
     int age;
     int numHobbies = 0;
-    
-    // Vectors act like dynamic arrays with the ability to resize themself automatically when an element is inserted or deleted from
-    //  their storage. Elements are added in memory blocks of continuous locations. If more memory is required upon inserting an element,
+
+    // Vectors act like dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted
+    //  their storage. Elements are added in memory blocks of continuous locations. If more memory is required upon inserting an element
     //  a new memory block is allocated to the vector and all elements are copied from the old location to the new location.
-    //  This comes at a cost of efficiency. One can reserve a memory block of a specified size to prevent reallocation of memory.
+    //  this comes at a cost of efficiency. One can reserve a memory block of a specified size to prevent reallocation of memory.
     vector<string> hobbies;
 
     //Stream class to write on files
@@ -118,7 +122,7 @@ int main() {
         cout << "Try again. I think you entered a name: " << endl;
         cout << "Try entering a number this time." << endl;
         cin.clear();
-        cin.ignore();
+        fflush(stdin);
         cin >> age;
     }
 
@@ -138,7 +142,7 @@ int main() {
         getline(cin, major);
     }
 
-    // string comparisons in C++ compare the value of the string object to the sequence of characters specified by its args
+    // string comparisons in C++ compares the value of the string object to the sequence of characters specified by its args
     if(major.compare("Computer Science") == 0){
         cout << "That is a great major! " << endl;
     }
@@ -157,8 +161,8 @@ int main() {
     if(myFile.is_open()){
         myFile << "My name is " << name << " and I am " << age << " years old. " << endl;
         myFile << "I am currently studying " << major << " at BSU" << endl;
-        for(auto& hobby: hobbies) {
-            myFile << hobby << " ";
+        for(int i=0; i < hobbies.size();i++) {
+            myFile << hobbies[i] << " ";
         }
         myFile.close();
     }
@@ -173,6 +177,7 @@ int main() {
 
     return 0;
 }
+
 
         </code>
         <samp>
