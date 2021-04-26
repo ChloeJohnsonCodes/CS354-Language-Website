@@ -7,7 +7,7 @@ using namespace std;
 // Much like its predecessor C, C++ did not build the input/output facilities into the language and relies on external library functions.
 // C++ uses the external packages iostream or fstream. As seen in then name of theses external libraries,
 // C++ uses an abstraction called "streams" which represent a device on which to perform input and output operations. This abstraction
-// makes the live of the programmer much easier as a stream object acts as an intermediary between the program and actual IO devices
+// makes the life of the programmer much easier as a stream object acts as an intermediary between the program and actual IO devices
 // and handles the device so the programmer does not have to.
 //
 //      The C++ standard library defines 4 main stream objects including:
@@ -23,13 +23,13 @@ using namespace std;
 //
 //Syntax for IO operations:
 //      Insertion operator: <<
-//          To build a statement multiple insertion operators may b e chained in a single statement:
+//          To build a statement multiple insertion operators maybe chained in a single statement:
 //              cout << "Hello " << "my name is " << name;
 //          To separate statements with newline the statement can end with endl which will add a newline character to the end
 //      Extraction operator: >>
 //            cin >> age
-//      This operation is vulnerable to the user supplying the correct type. If the wrong type is not supplied the
-//      the program continues without initialing the variable "name". This may produce unexpected behavior when the
+//      This operation is vulnerable to the user supplying the correct type. If the wrong type is not supplied
+//      the program continues without initializing the variable "name". This may produce unexpected behavior when the
 //      value of name is used in later code blocks.
 
 // Other bits of information
@@ -106,7 +106,7 @@ int main() {
         cin >> age;
     }
 
-    // if cin is in error reset error big
+    // if cin is in error reset error bit
     if(cin.fail()){
         cin.clear();
     }
