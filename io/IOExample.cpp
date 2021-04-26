@@ -102,7 +102,7 @@ int main() {
         cout << "Try again. I think you entered a name: " << endl;
         cout << "Try entering a number this time." << endl;
         cin.clear();
-        cin.ignore();
+        fflush(stdin);
         cin >> age;
     }
 
