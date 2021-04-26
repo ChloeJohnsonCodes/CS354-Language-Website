@@ -5,8 +5,8 @@
     <h1>Classes in C++</h1>
     <h3>Author: Hannah Jacobson</h3>
     <p>C++ implements the creation of classes alongside the majority of C's features. These classes allow C++ to incorporate
-      encapsulation, polymorphism, and inheritance.. Methods and public variables from a class are accessed with dot syntax 
-      (i.e. square.foo()) and the content of a class can be hidden from the user by used one of the three access specifiers: 
+      encapsulation, polymorphism, and inheritance. Methods and public variables from a class can be accessed with dot syntax 
+      (i.e. square.foo()) and the content of a class can be hidden from the user by using one of the three access specifiers: 
       public, private, or protected. Subclasses can inherit methods and attributes from one or more parent classes, 
       differentiating it from other object-oriented languages like Java.</p>
     <h3>Wallet Header</h3>
@@ -27,7 +27,7 @@
 			void setBalance(int val);   //Set the balance to be an integer value
     
 			void withdraw(int val);     //Remove an integer value from the balance
-	};
+		};
         </code>
       </pre>
     </p>
@@ -40,7 +40,7 @@
     <p>
       <pre>
         <code>
-            	#include "Wallet.h"                 //Remember to include the header file!
+	#include "Wallet.h"                 //Remember to include the header file!
         
 	Wallet::Wallet(){
 		balance = 0;                    //Initialize our class variables
