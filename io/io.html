@@ -5,7 +5,7 @@
     <h1>I/O in C++</h1>
     <h3>Author: Ian Whitney</h3>
     <p> Much like its predecessor C, C++ did not build the input/output facilities into the language and relies on external library functions.
-      C++ uses the external packages iostream or fstream. As seen in then name of theses external libraries,
+      C++ uses the external packages iostream or fstream. As seen in the name of theses external libraries,
       C++ uses an abstraction called "streams" which represent a device on which to perform input and output operations. This abstraction
       makes the life of the programmer much easier as a stream object acts as an intermediary between the program and actual IO devices
       and handles the device so the programmer does not have to.
@@ -16,7 +16,7 @@
         <li>cin : standard input stream</li>
         <li>cout: standard output stream</li>
         <li>cerr: standard error (output) stream</li>
-        <li>clog" standard logging(output) stream</li>
+        <li>clog: standard logging(output) stream</li>
       </ul>
     </p>
     <p>
@@ -31,7 +31,7 @@
     <p>
       <dl>
         <dt> Insertion operator: << </dt>
-      <dd>  To build a statement multiple insertion operators maybe chained in a single statement: </dd>
+      <dd>  To build a statement multiple insertion operators may be chained in a single statement: </dd>
            <dd> cout << "Hello " << "my name is " << name; </dd>
       </dd>
       <dt> Extraction operator: >> </dt>
@@ -69,18 +69,20 @@ bool check_number(string str) {
 int main() {
     //Variable creation
     //In C++, Strings are objects that represent a sequences of characters. The string class adds additional built-in functions
-//        to manipulate strings versus a character array like that seen in C. There is a difference in memory allocation
-//        the size of a character array has to allocated statically and more memory cannot be allocated at run time.
-//        This differs in the case of strings, memory is allocated dynamical and more memory can be allocated at run time.
-//        The trade off is that strings no memory is wasted but implementation of character array is faster.
+//        to manipulate strings versus a character array like that seen in C. There is a difference - in memory allocation
+//        the size of a character array has to be allocated statically and more memory cannot be allocated at run time.
+//        This differs in the case of strings, memory is allocated dynamically and more memory can be allocated at run time.
+//        The trade off is that with strings no memory is wasted but implementation of a character array is faster.
+
     string name;
     string major;
     int age;
     int numHobbies = 0;
-    // Vectors act like dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted
-    //  their storage. Elements are added in memory blocks of continuous locations. If more memory is required upon inserting an element
+    
+    // Vectors act like dynamic arrays with the ability to resize themself automatically when an element is inserted or deleted from
+    //  their storage. Elements are added in memory blocks of continuous locations. If more memory is required upon inserting an element,
     //  a new memory block is allocated to the vector and all elements are copied from the old location to the new location.
-    //  this comes at a cost of efficiency. One can reserve a memory block of a specified size to prevent reallocation of memory.
+    //  This comes at a cost of efficiency. One can reserve a memory block of a specified size to prevent reallocation of memory.
     vector<string> hobbies;
 
     //Stream class to write on files
@@ -136,7 +138,7 @@ int main() {
         getline(cin, major);
     }
 
-    // string comparisons in C++ compares the value of the string object to the sequence of characters specified by its args
+    // string comparisons in C++ compare the value of the string object to the sequence of characters specified by its args
     if(major.compare("Computer Science") == 0){
         cout << "That is a great major! " << endl;
     }
