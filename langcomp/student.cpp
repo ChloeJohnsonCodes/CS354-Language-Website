@@ -6,10 +6,13 @@ using namespace std;
 // Therefore, any member that is declared before any other access specifier has private access automatically.
 class Student {
     string major = "Undecided";
+    int grade = 12;
 public:
     void setMajor (string major);
+    void operator-();
     friend void printMajor(Student student);
     string getMajor() {return major;}
+    int getGrade() {return grade;}
 };
 
 //scope operator (::, two colons)
@@ -18,9 +21,14 @@ void Student::setMajor(string maj) {
     major = maj;
 }
 
-//not a member function of Student class but can still access private member major
+//operator overloading
+void Student::operator-(){
+    grade = grade + 1;
+}
+
+//not a member function of Student class but can still access private member student
 void printMajor(Student student){
-    cout<< "I am a " << student.major << " major! ";
+    cout<< "I am a " << student.major << " major! \n";
 }
 
 
@@ -32,5 +40,9 @@ int main() {
 
     //Use of friend function to print the major
     printMajor(*student);
+
+    //What is going on here?!?!?
+    -*student;
+    cout << "I am in grade " << student->getGrade();
     delete(student);
 }
