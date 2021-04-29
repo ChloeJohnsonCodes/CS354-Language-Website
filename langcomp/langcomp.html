@@ -57,7 +57,8 @@
       <p>The object orientation in C++ is easily comparable to the object orientation found in Java. While C++ may not be as universally 
       portable as Java, both languages allow the use of inheritance, polymorphism, method overloading, and encapsulation when writing classes.
       Even with these similarities, C++ does have its moments to shine - the language allows multiple inheritance and defining methods outside
-      of a class, for example, unlike Java. C++ also allows a declared object to be a variable, where Java does not. </p>
+      of a class, for example, unlike Java. C++ also allows the use of friend functions: functions that have access to a class's private and 
+      protected members. Finally, C++ allows a declared object to be a variable, where Java does not. </p>
 
       <p>Where C++ differs even more from Java is its foundational codebase in C. C++ utilizes manual memory management, making it a suitable 
       language for systems programming. C++ also copies C's approach to pointers, pointer arithmetic, structs, unions, and header files.</p> 
@@ -164,12 +165,13 @@
     <p>The student program as implemented in C++.</p>
       <pre>
         <code>
-        #include <iostream>
+        #include &lt;iostream&gt;
 
         using namespace std;
 
         //By default, all members of a class declared with the class keyword have private access for all its members.
         // Therefore, any member that is declared before any other access specifier has private access automatically.
+        
         class Student {
             string major = "Undecided";
             int grade = 12;
@@ -183,16 +185,19 @@
 
         //scope operator (::, two colons)
         //Member function definition
+        
         void Student::setMajor(string maj) {
             major = maj;
         }
 
         //operator overloading
+        
         void Student::operator-(){
             grade = grade + 1;
         }
 
         //not a member function of Student class but can still access private member student
+        
         void printMajor(Student student){
             cout<< "I am a " << student.major << " major! \n";
         }
